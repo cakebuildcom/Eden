@@ -10,8 +10,8 @@ tool.Equipped:Connect(function()
 end)
 
 tool.Activated:Connect(function()
-	if tool.Parent.Humanoid.Health > 0 and ready == true then
-		if not tool.Enabled or not anim then return end
+	if tool.Parent.Humanoid.Health > 0 and tool.Enabled then
+		if not anim then return end
 		tool.Enabled = false
 		anim:Play()
 		wait(anim.Length)
