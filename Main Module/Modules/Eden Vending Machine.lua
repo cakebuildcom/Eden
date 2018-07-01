@@ -1,6 +1,5 @@
 --[[Eden Vending Machine]]--
 library = require(script.Parent.Library)
-server = require(script.Parent.Server)
 
 items = script.Parent.Parent.Items
 event = items.Event

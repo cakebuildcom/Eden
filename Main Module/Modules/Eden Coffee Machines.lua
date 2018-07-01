@@ -1,5 +1,3 @@
-library = require(script.Parent.Library)
-
 preferences = nil
 
 items = script.Parent.Parent.Items
@@ -344,7 +342,6 @@ module = {
 		end,
 
 		Selected = function(player,typ,name)
-			print(player,typ,name)
 			if preferences.Types[typ][name] then
 				local tool = player.Character:FindFirstChildOfClass("Tool")
 				if not tool then return end
