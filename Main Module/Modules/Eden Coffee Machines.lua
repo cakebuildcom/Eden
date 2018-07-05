@@ -1,6 +1,8 @@
 preferences = nil
 
-items = script.Parent.Parent.Items
+modules = script.Parent
+items = modules.Parent.Items
+
 event = items.Event
 broadcast = items.Broadcast
 invoke = items.Invoke
@@ -294,7 +296,7 @@ module = {
 					end
 					cup:Destroy()
 
-					local drink = script:WaitForChild("Drink"):Clone()
+					local drink = script.Drink:Clone()
 					drink.Parent = tool
 					drink.Disabled = false
 				end)
@@ -328,7 +330,7 @@ module = {
 						part.Anchored = false
 						part.Parent = tool
 					end
-					local drink = script:WaitForChild("Drink"):Clone()
+					local drink = script.Drink:Clone()
 					drink.Parent = tool
 					drink.Disabled = false
 				end)

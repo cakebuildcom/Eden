@@ -8,13 +8,27 @@ module = {
 	GetDefaultPlayer = function()
 		return {
 			Credits = 5,
-			Locations = {}
+			Locations = {},
+			Purchases = {}
 		}
+	end,
+
+	AddPurchase = function(playerid,purchaseid,productid,spent)
+		local key = tostring(playerid)
+		table.insert(
+			module.Temporary.Players[key].Purchases,
+			{
+				PurchaseId = purchaseid,
+				ProductId = productid,
+				Spent = spent
+			}
+		)
 	end,
 
 	AddMoney = function(player,amount)
 		local key = tostring(player.UserId)
 		local credits = module.Temporary.Players[key].Credits
+		if not credits then return end
 		credits = credits + amount
 		module.Temporary.Players[module.PlayerKey(player)].Credits = credits
 	end,

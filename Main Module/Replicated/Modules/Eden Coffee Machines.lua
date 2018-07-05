@@ -118,6 +118,9 @@ module = {
 	RemoteFunctions = {
 		Select = function(typ)
 			if interface.Gui.Enabled then return end
+			if not preferences then
+				preferences = invoke:Invoke(script.Name,"GetPreferences")
+			end
 			interface.Type = typ
 			module.FillScroll(typ)
 			interface.Gui.Enabled = true

@@ -1,9 +1,16 @@
 service = game:GetService("DataStoreService")
 
+modules = script.Parent
+items = modules.Parent.Items
+
+event = items.Event
+broadcast = items.Broadcast
+invoke = items.Invoke
+
 module = {
 	Install = function(product)
 		product.Source.Parent = nil
-		local saveModule = require(script.Parent.Save)
+		local saveModule = require(modules.Save)
 		local ready = true
 
 		product.Button.Click.MouseClick:Connect(function(player)
